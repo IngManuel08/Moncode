@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* =====================================================
+   CRÍTICO – Tailwind v4 usa por defecto el modo oscuro
+   basado en la preferencia del sistema (media query).
+   Esta línea le indica que use la clase .dark en el
+   elemento <html>, tal como lo hace ThemeContext.
+===================================================== */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+
+  html {
+    transition: background-color 0.3s, color 0.3s;
+    background-color: white;
+    color: #111827;
+  }
+
+  html.dark {
+    background-color: #000000;
+    color: white;
+  }
+
+  body {
+    background-color: inherit;
+    color: inherit;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: inherit;
+  }
+}
